@@ -26,12 +26,16 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
+'.map' will return an array because is applying a function to every item in a given array. '.forEach' doesn't return an array, it returns undefined. 
 
 2. Explain the difference between a callback and a higher order function.
+Callback functions are passed into higher order functions. Higher order functions take callback functions as argument 
 
 3. What is closure?
+Closure is nesting code inside of other code. The child can reach up to the parent for access to its variables. 
 
 4. Describe the four rules of the 'this' keyword.
+
 
 5. Why do we need super() in an extended class?
 
