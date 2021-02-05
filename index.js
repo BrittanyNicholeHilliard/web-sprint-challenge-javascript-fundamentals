@@ -1,15 +1,3 @@
-//*********************** I have had a tough time catching up, it took until thursday last week for the basic Javascript to click with me
-// I will upload this and continue to study and answer questions as I catch up. */
-
-
-
-
-
-
-
-
-
-
 //🚀🚀🚀  Topic #1 Closures 🚀🚀🚀//
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
@@ -29,8 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-//Because nestedFunction is actually nested function. This would be an example of a closure, as myFunction is nestedFunction'setInterval(() => {
-//parent. 
+because nestedFunction is actually nested inside of myFunction and can reach up to use it
 
 
 
@@ -41,10 +28,15 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let add = 0;
+  for (let i = 1; i <= number; i++) {
+    add += i;
   }
+  return add;
+}
+
+console.log(summation(10));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -70,25 +62,14 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
- const zooAnimals = [
-  { animal_name: "Jackal, asiatic", population: 5, scientific_name: "Canis aureus", state: "Kentucky" },
-  { animal_name: "Screamer, southern", population: 1, scientific_name: "Chauna torquata", state: "Alabama" },
-  { animal_name: "White spoonbill", population: 8, scientific_name: "Platalea leucordia", state: "Georgia" },
-  { animal_name: "White-cheeked pintail", population: 1, scientific_name: "Anas bahamensis", state: "Oregon" },
-  { animal_name: "Black-backed jackal", population: 2, scientific_name: "Canis mesomelas", state: "Washington" },
-  { animal_name: "Brolga crane", population: 9, scientific_name: "Grus rubicundus", state: "New Mexico" },
-  { animal_name: "Common melba finch", population: 5, scientific_name: "Pytilia melba", state: "Pennsylvania" },
-  { animal_name: "Pampa gray fox", population: 10, scientific_name: "Pseudalopex gymnocercus", state: "Connecticut" },
-  { animal_name: "Hawk-eagle, crowned", population: 10, scientific_name: "Spizaetus coronatus", state: "Florida" },
-  { animal_name: "Australian pelican", population: 5, scientific_name: "Pelecanus conspicillatus", state: "West Virginia" },
-];
+ const displayNames = [];
 
-// function animalNames(array, 'animal_name', 'scientific_name'){
-// for (let i=0; i < array.length; i++) {
-//   if (array[i].includes('animal_name')
+ zooAnimals.forEach(function(element){
+    var display = "Name: " + element.animal_name + ", " + "Scientific: " + element.scientific_name
+    displayNames.push(display)
+ })
 
-
-}
+ console.log(displayNames);
 
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -97,20 +78,25 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+ const lowerCaseNames = zooAnimals.map(namearray => namearray.animal_name.toLowerCase());
+ console.log(lowerCaseNames);
   
-  
+
+
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  function lowPopulationAnimals(popArray){
+    zooAnimals.filter(popArray) {
+      return popArray.population < 5;
+    }
   
+
+const lowPopulationAnimals = zooAnimals.filter(popArray => popArray.population < 5);
+
+
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -118,10 +104,13 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
+zooAnimals.reduce
+
   function USApop(/*Your Code Here*/){
     /*Your Code Here*/
   }
   
+  const populationTotal = zooAnimals.reduce((accum, currentPop) => accum + currentPop.population, 0);
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -131,9 +120,16 @@ const zooAnimals = [
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
+  function consume(a, b, cb){
+   console.log(`You ate ${a} and ${b}`);
   }
+
+  function eatFood(cb) {
+    const foodTwo = 'yummy';
+    cb(foodTwo);
+  }
+
+
  
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
@@ -219,6 +215,12 @@ class CuboidMakerTwo{
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
 // console.log(cuboidTwo.volume()); // 100
 // console.log(cuboidTwo.surfaceArea()); // 130
+
+
+
+
+
+
 
 
 
